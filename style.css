@@ -1,0 +1,77 @@
+body {
+  background-color: hsla(71, 83%, 86%, 1);
+}
+header {
+  font-family: Roboto, "sans-serif";
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 65.63px;
+  letter-spacing: -0.004em;
+  text-align: center;
+  color: hsla(157, 31%, 59%, 1);
+  margin: 40px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+  margin: 0px 116px;
+  margin-top: 7px;
+  justify-content: center;
+}
+.card {
+  width: 117px;
+  height: 146px;
+  position: relative;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid hsla(137, 35%, 70%, 1);
+  background-color: hsla(127, 60%, 78%, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+}
+
+.back-face {
+  transform: rotateY(180deg);
+}
+
+.card.active .back-face {
+  transform: rotateY(0deg);
+}
+
+.card.active .front-face {
+  transform: rotateY(-180deg);
+}
+
+.card.matched .back-face {
+  transform: rotateY(0deg);
+}
+
+.card.matched .front-face {
+  transform: rotateY(-180deg);
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 335px) {
+  header {
+    font-size: 36px;
+    line-height: 42.19px;
+    letter-spacing: -0.004em;
+    text-align: center;
+    color: hsla(157, 31%, 59%, 1);
+    margin: 40px;
+  }
+}
